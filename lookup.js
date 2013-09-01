@@ -40,10 +40,14 @@ window.onload = function() {
 		
 		if( !!resultCount ) {
 		
-			resultText.innerHTML =  "No banding codes matched that. There were " + resultCount + " possible result(s): <br /><br />"+
+			document.activeElement.blur();
+		
+			resultText.innerHTML =  "No banding codes matched <strong>" + value + "</strong>.<br /> There are " + resultCount + " matching species: <br /><br />"+
 									"<table><tr><th>Species Name</th><th>Banding Code</th></tr>"+
 									resultString +
 									"</table>";
+									
+			//window.location.hash = "";
 
 			return;
 		

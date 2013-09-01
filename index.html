@@ -13,15 +13,59 @@
 		
 		<style>
 		
-			#band-result {
+			body {
 				
-				color: 			green;
+				font-family: helvetica;
+				background-color: #efefef;
+				color: #555555;
+				
+			}
+			
+			h1 {
+				
+				font-size:  1.375em;
+				
+			}
+			
+			table {
+				
+				font-size: 0.825em;
 				
 			}
 			
 			th {
 				
 				text-align: left;
+				
+			}
+			
+			tr:nth-child(even) {
+			
+				background: #dddddd
+				
+			}
+			
+			p.band-instructions {
+				
+				font-style: italic;
+				
+			}
+			
+			p#band-footer {
+				
+				font-style: italic;
+				
+			}
+			
+			p#band-result {
+				
+				color: 			green;
+				
+			}
+			
+			#band-form {
+				
+				padding-left: 1em;
 				
 			}
 		
@@ -42,7 +86,6 @@
 			    cursor: pointer;
 			    display: inline-block;
 			    padding: 7px;
-			    text-transform: uppercase;
 				
 			}
 			
@@ -52,6 +95,14 @@
 				color: green;
 				
 			}
+			
+			div.band-indent {
+				
+				margin-left: 1em;
+				font-style: italic;
+				
+			}
+
 		
 		</style>
 		
@@ -59,10 +110,10 @@
 	
 	<body>
 	
-		<h1>Banding Code Reference</h1>
+		<h1>Bird Banding Code Lookup</h1>
 		
-		<p>To use this tool, enter either a four-letter banding code, or enter a full or partial species name.</p>
-		
+		<p class="band-instructions">Enter either a four-letter banding code, like <strong>CAGO</strong>, or a full or partial species name, like <strong>warbler</strong>.</p>
+	
 		<div id="band-form">
 
 			<input id="band-text" type="text" placeholder="Code or Species Name" onkeypress="return checkSubmit(event)" onclick="this.value=''" />
@@ -71,6 +122,53 @@
 		</div>
 		
 		<p id="band-result"></p>
+		
+		<section>
+		
+			<h2>FAQ</h2>
+			
+			<h3>What's a Banding Code?</h3>
+			
+			<p>Banding Codes are short, four-letter codes used to abbreviate the names of bird species. Codes are used both by ornithologists and birders as a shorthand, mostly to make field notes much easier.</p>
+			
+			<h3>How are they formed?</h3>
+			
+			<p>The basic rules are as follows...</p>
+			
+				<div class="band-indent">
+					<h4>For 1-word species:</h4>
+					<p>The first four letters are used. "Mallard" becomes "MALL".</p>
+					<h4>For 2-word species:</h4>
+					<p>The first two letters of each word are combined. "Blue Jay" becomes "BLJA".</p>
+					<h4>For 3-word species:</h4>
+					<p>The first letter of the first two words are combined with the first two letters of the last word. "Black-capped Chickadee" becomes "BCCH".</p>
+					<h4>For 4-word species:</h4>
+					<p>The first letter of each word is combined. "Black-crowned Night-Heron" becomes "BCNH".</p>
+				</div>
+				
+			<h3>If it's that easy, why this tool?</h3>
+			
+			<p>It's actually <em>not</em> that easy. Some species end up with the same code, using these rules. For example, "Canyon Wren", "Carolina Wren", and "Cactus Wren" all end up with the code "CAWR". Oops. So secondary rules are made.. and sometimes those rules don't work either, and tertiary rules are made. It's those exceptions that can make remembering banding codes tough.</p>
+			
+			<h3>What's the source of your banding code data?</h3>
+			
+			<p>This tool currently using the data as listed by the USGS at <a href="http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm" target="_blank">this site</a>.</p>
+			
+			<h3>I found a bird band, or photographed a banded bird! What do I do?</h3>
+			
+			<p>As long as it wasn't an obviously domesticated bird, go report it to USGS/Environment Canada via <a href="https://www.pwrc.usgs.gov/BBL/bblretrv/" target="_blank">this site</a>. Also, you should report it (and all your bird sightings, really) on <a href="http://ebird.org/" target="_blank">eBird</a>.</p>
+
+			<h3>Why did you make this tool?</h3>
+			
+			<p>There didn't appear to be any good sites or online tools that had this kind of quick lookup functionality!</p>
+			
+			<h3>Are these all the birds in the world, or just a certain region?</h3>
+			
+			<p>These are the banding codes for species in North America.</p>
+		
+		</section>
+		
+		<p id="band-footer">Powered by <a href="https://github.com/rgeraldporter/BANDjs" target="_blank">BandJS</a> by <a href="https://twitter.com/rgeraldporter" target="_blank">@rgeraldporter</a>.</p>
 	
 	</body>
 	
