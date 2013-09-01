@@ -40,7 +40,7 @@ window.onload = function() {
 		
 		if( !!resultCount ) {
 		
-			resultText.innerHTML =  resultCount + " result(s): <br /><br />"+
+			resultText.innerHTML =  "No banding codes matched that. There were " + resultCount + " possible result(s): <br /><br />"+
 									"<table><tr><th>Species Name</th><th>Banding Code</th></tr>"+
 									resultString +
 									"</table>";
