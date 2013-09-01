@@ -1,0 +1,40 @@
+<!DOCTYPE html5>
+<html>
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		
+		<title>Banding Code Lookup</title>
+		
+		<script type="application/javascript" src="inc/bandcode.js"></script>
+		<script type="application/javascript" src="lookup.js"></script>
+		
+		<style>
+		
+			#band-result {
+				
+				color: 			green;
+				font-weight:  	bold;
+				
+			}
+		
+		</style>
+		
+	</head>
+	
+	<body>
+
+		<input id="band-text" type="text" placeholder="Enter Banding Code" onkeypress="return checkSubmit(event)" onclick="this.value=''" />
+		<input id="band-submit" type="button" value="Look Up" />
+		
+		<p id="band-result"></p>
+		
+		<input id="band-all" type="button" value="Show All" />
+		
+		<div id="band-all-result"></div>
+	
+	</body>
+	
+</html>
