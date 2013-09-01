@@ -17,3 +17,8 @@ For example, the Blue Jay has a banding code of BLJA, a contraction of the first
 
 Due to collisions, however, this method doesn't work for all species, and sometimes requires special rules that are hard to memorise. For example, the Cedar Waxwing and Cerulean Warbler would have the same code, so two seperate codes were devised, CEDW, and CERW respectively.
 
+Use the Tool
+=======
+
+Go to http://bandjs.greenbee.ca/ to use the tool.
+
