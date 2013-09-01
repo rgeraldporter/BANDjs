@@ -1,3 +1,5 @@
+/* data source: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm */
+
 bandCode	= {
 
 	"ABTO":		"ABERT'S TOWHEE",

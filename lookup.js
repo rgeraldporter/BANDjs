@@ -8,35 +8,68 @@ window.onload = function() {
 		
 	window.lookup			= function() {
 	
-		var value = inputText.value.toUpperCase();
+		var value 		= inputText.value.toUpperCase(),
+			extraText	= "";
+
+		if( !!bandCode[value] ) {
 		
-		if( !!!bandCode[value] )
-			resultText.innerHTML = "no result (" + value + ")";
-		else 
-			resultText.innerHTML = bandCode[ value ] + " (" + value + ")";
-	
-	};
-	
-	var showAll			= function() {
-	
-		var table = "<table><tr><th>Species Name</th><th>Banding Code</th></tr>";
-	
+			if( bandCode[value].length < 5 )
+				extraText	= " (yes, that's its actual full species name!)";
+		
+			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[ value ] + "</strong>" + extraText;
+			
+			return;
+			
+		}
+		
+		// no result, going to try to guess
+		
+		var resultString 		= "",
+			resultCount			= 0;
+		
 		for( var key in bandCode ) {
 		
-			table += "<tr><td>" + bandCode[key] + "</td><td>" + key + "</td></tr>";
+			if( bandCode[key].search(value) == -1 )
+				continue;
+				
+			resultString += "<tr><td>" + bandCode[key] + "</td><td><strong>" + key + "</strong></td></tr>";
+			
+			resultCount++;		
 		
 		}
 		
-		table += "</table>";
+		if( !!resultCount ) {
 		
-		bandAllResult.innerHTML = table;		
+			resultText.innerHTML =  resultCount + " result(s): <br /><br />"+
+									"<table><tr><th>Species Name</th><th>Banding Code</th></tr>"+
+									resultString +
+									"</table>";
+
+			return;
+		
+		}
+
+		resultText.innerHTML = "No results for \"" + value + "\"";
+	
+	};
+	
+	window.changeSubmitButtonText	= function() {
+	
+		submitButton.value = "Look Up";
+	
+	}
+	
+	window.clearText 	= function() {
+	
+		submitButton.value = "Show All";
+		inputText.value = "";
 	
 	}
 		
-	submitButton.addEventListener( 'touchend', lookup );
-	submitButton.addEventListener( 'click', lookup );
-	bandAll.addEventListener( 'touchend', showAll );
-	bandAll.addEventListener( 'click', showAll );
+	submitButton.addEventListener( 'touchend', window.lookup );
+	submitButton.addEventListener( 'click', window.lookup );
+	inputText.addEventListener( 'keydown', window.changeSubmitButtonText );
+	inputText.addEventListener( 'click', window.clearText );
 	
 };
 

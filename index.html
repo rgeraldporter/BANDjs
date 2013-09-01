@@ -16,7 +16,40 @@
 			#band-result {
 				
 				color: 			green;
-				font-weight:  	bold;
+				
+			}
+			
+			th {
+				
+				text-align: left;
+				
+			}
+		
+			#band-form input, input#band-all {
+				
+				font-size: 1.25em;
+				width: 		13em;
+				display: 	block;
+				margin:  	0.375em;
+				padding: 	0.25em;
+				
+			}
+			
+			input[type=button] {
+			
+				background: none repeat scroll 0 0 #cccccc;
+			    border: medium none;
+			    cursor: pointer;
+			    display: inline-block;
+			    padding: 7px;
+			    text-transform: uppercase;
+				
+			}
+			
+			
+			input#band-all {
+				
+				color: green;
 				
 			}
 		
@@ -25,15 +58,19 @@
 	</head>
 	
 	<body>
+	
+		<h1>Banding Code Reference</h1>
+		
+		<p>To use this tool, enter either a four-letter banding code, or enter a full or partial species name.</p>
+		
+		<div id="band-form">
 
-		<input id="band-text" type="text" placeholder="Enter Banding Code" onkeypress="return checkSubmit(event)" onclick="this.value=''" />
-		<input id="band-submit" type="button" value="Look Up" />
+			<input id="band-text" type="text" placeholder="Code or Species Name" onkeypress="return checkSubmit(event)" onclick="this.value=''" />
+			<input id="band-submit" type="button" value="Show All" />
+		
+		</div>
 		
 		<p id="band-result"></p>
-		
-		<input id="band-all" type="button" value="Show All" />
-		
-		<div id="band-all-result"></div>
 	
 	</body>
 	
