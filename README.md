@@ -1,14 +1,14 @@
 BANDjs
 ======
 
-Bird Banding Codes stored in Javascript with optional API delivery mechanism through NodeJS.
+A tool to look up bird banding codes for North American species.
 
-About
+About Banding Codes
 ======
 
-Bird Banding Codes are widely used by by scientist, field ornithologists, and everyday birders. This API will (hopefully) assist in translating any bird band code into a full species name.
+Bird Banding Codes are widely used by by scientist, field ornithologists, and everyday birders. This tool will (hopefully) assist in translating any bird band code into a full species name.
 
-Examples
+Examples of Banding Codes
 ========
 
 Banding Codes are four-letter codes that represent specific species. 
