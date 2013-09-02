@@ -1,4 +1,4 @@
-/* original data source: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm */
+/* original data sourceS: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm AND http://www.pwrc.usgs.gov/bbl/MANUAL/gallaou.htm */
 
 bandCode	= {
 
@@ -1149,6 +1149,37 @@ bandCode	= {
 	"ZSHY":		"ZONOTRICHIA SPARROW HYBRID",
 	"YRWA":		"YELLOW-RUMPED WARBLER",
 	"DEJU":		"DARK-EYED JUNCO",
-	"COSN":		"COMMON SNIPE"
+	"COSN":		"COMMON SNIPE",
+	"NOFL":		"NORTHERN FLICKER",
+	"SNGO":		"SNOW GOOSE",
+	"GWTE":		"GREEN-WINGED TEAL",
+	"TUSW":		"TUNDRA SWAN",
+	"TBGO":		"TUNDRA BEAN-GOOSE",
+	"BRAN":		"BRANT",
+	"PAWA":		"PALM WARBLER",
+	"GRPA":		"GRAY PARTRIDGE",
+	"CHUK":		"CHUKAR",
+	"NOBO":		"NORTHERN BOBWHITE",
+	"MOUQ":		"MOUNTAIN QUAIL",
+	"SCQU":		"SCALED QUAIL",
+	"CAQU":		"CALIFORNIAL QUAIL",
+	"GAQU":		"GAMBEL'S QUAIL",
+	"MTZQ":		"MONTEZUMA'S QUAIL",
+	"BGSE":		"BLUE GROUSE",
+	"SPGR":		"SPRUCE GROUSE",
+	"RUGR":		"RUFFED GROUSE",
+	"WIPT":		"WILLOW PTARMIGAN",
+	"ROPT":		"ROCK PTARMIGAN",
+	"WTPT":		"WHITE-TAILED PTARMIGAIN",
+	"GPCH":		"GREATER PRAIRIE-CHICKEN",
+	"LPCH":		"LESSER PRAIRIE-CHICKEN",
+	"STGR":		"SHARP-TAILED GROUSE",
+	"GRSG":		"GREATER SAGE GROUSE",
+	"RPHE":		"RING-NECKED PHEASANT",
+	"GUSG":		"GUNNISON SAGE-GROUSE",
+	"COMP":		"COMMON PEAFOWL",
+	"WITU":		"WILD TURKEY",
+	"PLCH":		"PLAIN CHACHALACA",
+	"ROPI":		"ROCK PIGEON"
 
 };
