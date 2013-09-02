@@ -1,4 +1,4 @@
-/* data source: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm */
+/* original data source: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm */
 
 bandCode	= {
 
@@ -1146,6 +1146,9 @@ bandCode	= {
 	"ZEBD":		"ZEBRA DOVE",
 	"ZEND":		"ZENAIDA DOVE",
 	"ZTHA":		"ZONE-TAILED HAWK",
-	"ZSHY":		"ZONOTRICHIA SPARROW HYBRID"
+	"ZSHY":		"ZONOTRICHIA SPARROW HYBRID",
+	"YRWA":		"YELLOW-RUMPED WARBLER",
+	"DEJU":		"DARK-EYED JUNCO",
+	"COSN":		"COMMON SNIPE"
 
 };
