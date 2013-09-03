@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+inc/bandcode.js
+lookup.js
+images/icon.png
+
+NETWORK:
+*

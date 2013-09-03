@@ -1,4 +1,11 @@
-/* original data sourceS: http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm AND http://www.pwrc.usgs.gov/bbl/MANUAL/gallaou.htm */
+/* original data sources: 
+
+http://www.pwrc.usgs.gov/bbl/manual/speclist.cfm 
+AND 
+http://www.pwrc.usgs.gov/bbl/MANUAL/gallaou.htm
+AND
+http://www.rmbo.org/public/monitoring/protocols/Field_protocol_for_spacially_balanced_sampling_2010_V3.pdf (unidentified codes)
+*/
 
 bandCode	= {
 
@@ -1181,6 +1188,36 @@ bandCode	= {
 	"COMP":		"COMMON PEAFOWL",
 	"WITU":		"WILD TURKEY",
 	"PLCH":		"PLAIN CHACHALACA",
-	"ROPI":		"ROCK PIGEON"
+	"ROPI":		"ROCK PIGEON",
+	"UNBI":		"UNIDENTIFIED BIRD",
+	"UNHA":		"UNIDENTIFIED HAWK",
+	"UNSP":		"UNIDENTIFIED SPARROW",
+	"UNOW":		"UNIDENTIFIED OWL",
+	"UNDU":		"UNIDENTIFIED DUCK",
+	"UNCR":		"UNIDENTIFIED CROW",
+	"UNFL":		"UNIDENTIFIED FLYCATCHER",
+	"UNAC":		"UNIDENTIFIED ACCIPITER",
+	"UNJY":		"UNIDENTIFIED JAY",
+	"UNBL":		"UNIDENTIFIED BLACKBIRD",
+	"UNBU":		"UNIDENTIFIED BUTEO",
+	"UNCH":		"UNIDENTIFIED CHICKADEE",
+	"UNDO":		"UNIDENTIFIED DOVE",
+	"UNFA":		"UNIDENTIFIED FALCON",
+	"UNFI":		"UNIDENTIFIED FINCH",
+	"UNGN":		"UNIDENTIFIED GNATCATCHER",
+	"UNGR":		"UNIDENTIFIED GROUSE",
+	"UNNU":		"UNIDENTIFIED NUTHATCH",
+	"UNOR":		"UNIDENTIFIED ORIOLE",
+	"UNPI":		"UNIDENTIFIED PIPIT",
+	"UNRA":		"UNIDENTIFIED RAPTOR",
+	"UNSW":		"UNIDENTIFIED SWALLOW",
+	"UNSI":		"UNIDENTIFIED SWIFT",
+	"UNTA":		"UNIDENTIFIED TANAGER",
+	"UNTH":		"UNIDENTIFIED THRUSH",
+	"UNTR":		"UNIDENTIFIED THRASHER",
+	"UNVI":		"UNIDENTIFIED VIREO",
+	"UNWA":		"UNIDENTIFIED WARBLER",
+	"UNWO":		"UNIDENTIFIED WOODPEKCER",
+	"UNWR":		"UNIDENTIFIED WREN"
 
 };
