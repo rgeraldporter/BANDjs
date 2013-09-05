@@ -1,3 +1,10 @@
+
+String.prototype.capitalize = function() {
+
+    return this.charAt(0).toUpperCase() + this.slice(1);
+    
+}
+
 window.onload = function() {
 
 	var inputText		= document.getElementById( "band-text" ),
@@ -5,6 +12,34 @@ window.onload = function() {
 		resultText		= document.getElementById( "band-result" ),
 		bandAll			= document.getElementById( "band-all" ),
 		bandAllResult	= document.getElementById( "band-all-result" );
+		
+	var decapsSpecies = function( species ) {
+	
+		var words = species.split( " " );
+		
+		for( var i = 0; i < words.length; i++ ) {
+		
+			words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
+			
+			if( words[i] == "X" )
+				words[i] = "x";
+				
+			if( i == (words.length - 1 ) && words[i].search("-") != -1 ) {
+			
+				var position 	= words[i].search("-"),
+					character	= words[i][position+1];
+					
+				words[i] = words[i].replace( "-" + character, "-" + character.toUpperCase() );				
+			
+			}
+		
+		}
+		
+		species = words.join( " " );
+		
+		return species;
+	
+	}
 		
 	window.lookup			= function() {
 	
@@ -15,8 +50,10 @@ window.onload = function() {
 		
 			if( bandCode[value].length < 5 )
 				extraText	= " (yes, that's its actual full species name!)";
+				
+			var species = decapsSpecies( bandCode[value] );
 		
-			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[ value ] + "</strong>" + extraText;
+			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + species + "</strong>" + extraText;
 			
 			return;
 			
@@ -32,7 +69,9 @@ window.onload = function() {
 			if( bandCode[key].search(value) == -1 )
 				continue;
 				
-			resultString += "<tr><td>" + bandCode[key] + "</td><td><strong>" + key + "</strong></td></tr>";
+			var speciesName	= decapsSpecies(  bandCode[key] );
+				
+			resultString += "<tr><td>" + speciesName + "</td><td><strong>" + key + "</strong></td></tr>";
 			
 			resultCount++;		
 		
