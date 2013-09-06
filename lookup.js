@@ -20,10 +20,10 @@ window.onload = function() {
 
 		if( !!bandCode[value] ) {
 		
-			if( bandCode[value].length < 5 )
+			if( bandCode[value].name.length < 5 )
 				extraText	= " (yes, that's its actual full species name!)";
 		
-			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[value] + "</strong>" + extraText;
+			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[value].name + "</strong>" + extraText;
 			
 			return;
 			
@@ -36,10 +36,12 @@ window.onload = function() {
 
 		for( var key in bandCode ) {
 		
-			if( bandCode[key].search(value) == -1 )
+			console.log( bandCode[key] );
+		
+			if( bandCode[key].name.search(new RegExp(value, "i")) == -1 )
 				continue;
 	
-			resultString += "<tr><td>" + bandCode[key] + "</td><td><strong>" + key + "</strong></td></tr>";
+			resultString += "<tr><td>" + bandCode[key].name + "</td><td><strong>" + key + "</strong></td></tr>";
 			
 			resultCount++;		
 		
