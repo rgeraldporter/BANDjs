@@ -36,12 +36,15 @@ window.onload = function() {
 
 		for( var key in bandCode ) {
 		
-			console.log( bandCode[key] );
+			var wikipediaLink = "<a href=\"http://en.wikipedia.org/wiki/Special:Search/" + encodeURIComponent( bandCode[key].name ) + "\" target=\"_blank\">Wikipedia</a>";
 		
 			if( bandCode[key].name.search(new RegExp(value, "i")) == -1 )
 				continue;
+			
+			if( bandCode[key].name.search(new RegExp("unidentified", "i")) != -1 || bandCode[key].name.search(new RegExp("unknown", "i")) != -1 || bandCode[key].name.search(new RegExp("hybrid", "i")) != -1 )	
+				wikipediaLink = "";
 	
-			resultString += "<tr><td>" + bandCode[key].name + "</td><td><strong>" + key + "</strong></td></tr>";
+			resultString += "<tr><td>" + bandCode[key].name + "</td><td><strong>" + key + "</strong></td><td>" + wikipediaLink + "</td></tr>";
 			
 			resultCount++;		
 		
@@ -52,7 +55,7 @@ window.onload = function() {
 			document.activeElement.blur();
 		
 			resultText.innerHTML =  "No banding codes matched <strong>" + value + "</strong>.<br /> There are " + resultCount + " matching species: <br /><br />"+
-									"<table><tr><th>Species Name</th><th>Banding Code</th></tr>"+
+									"<table><tr><th>Species Name</th><th>Banding Code</th><th>Read More</th></tr>"+
 									resultString +
 									"</table>";
 
