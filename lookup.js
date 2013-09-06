@@ -13,34 +13,6 @@ window.onload = function() {
 		bandAll			= document.getElementById( "band-all" ),
 		bandAllResult	= document.getElementById( "band-all-result" );
 		
-	var decapsSpecies = function( species ) {
-	
-		var words = species.split( " " );
-		
-		for( var i = 0; i < words.length; i++ ) {
-		
-			words[i] = words[i][0].toUpperCase() + words[i].slice(1).toLowerCase();
-			
-			if( words[i] == "X" )
-				words[i] = "x";
-				
-			if( i == (words.length - 1 ) && words[i].search("-") != -1 ) {
-			
-				var position 	= words[i].search("-"),
-					character	= words[i][position+1];
-					
-				words[i] = words[i].replace( "-" + character, "-" + character.toUpperCase() );				
-			
-			}
-		
-		}
-		
-		species = words.join( " " );
-		
-		return species;
-	
-	}
-		
 	window.lookup			= function() {
 	
 		var value 		= inputText.value.toUpperCase(),
@@ -50,10 +22,8 @@ window.onload = function() {
 		
 			if( bandCode[value].length < 5 )
 				extraText	= " (yes, that's its actual full species name!)";
-				
-			var species = decapsSpecies( bandCode[value] );
 		
-			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + species + "</strong>" + extraText;
+			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[value] + "</strong>" + extraText;
 			
 			return;
 			
@@ -63,15 +33,13 @@ window.onload = function() {
 		
 		var resultString 		= "",
 			resultCount			= 0;
-		
+
 		for( var key in bandCode ) {
 		
 			if( bandCode[key].search(value) == -1 )
 				continue;
-				
-			var speciesName	= decapsSpecies(  bandCode[key] );
-				
-			resultString += "<tr><td>" + speciesName + "</td><td><strong>" + key + "</strong></td></tr>";
+	
+			resultString += "<tr><td>" + bandCode[key] + "</td><td><strong>" + key + "</strong></td></tr>";
 			
 			resultCount++;		
 		
@@ -85,8 +53,6 @@ window.onload = function() {
 									"<table><tr><th>Species Name</th><th>Banding Code</th></tr>"+
 									resultString +
 									"</table>";
-									
-			//window.location.hash = "";
 
 			return;
 		
