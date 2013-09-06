@@ -1,10 +1,4 @@
 
-String.prototype.capitalize = function() {
-
-    return this.charAt(0).toUpperCase() + this.slice(1);
-    
-}
-
 window.onload = function() {
 
 	var inputText		= document.getElementById( "band-text" ),
@@ -18,12 +12,12 @@ window.onload = function() {
 		var value 		= inputText.value.toUpperCase(),
 			extraText	= "";
 
-		if( !!bandCode[value] ) {
+		if( !!birdBrain[value] ) {
 		
-			if( bandCode[value].name.length < 5 )
+			if( birdBrain[value].name.length < 5 )
 				extraText	= " (yes, that's its actual full species name!)";
 		
-			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + bandCode[value].name + "</strong>" + extraText;
+			resultText.innerHTML = "<strong>" + value + "</strong> is the banding code for: <strong>" + birdBrain[value].name + "</strong>" + extraText;
 			
 			return;
 			
@@ -34,17 +28,17 @@ window.onload = function() {
 		var resultString 		= "",
 			resultCount			= 0;
 
-		for( var key in bandCode ) {
+		for( var key in birdBrain ) {
 		
-			var wikipediaLink = "<a href=\"http://en.wikipedia.org/wiki/Special:Search/" + encodeURIComponent( bandCode[key].name ) + "\" target=\"_blank\">Wikipedia</a>";
+			var wikipediaLink = "<a href=\"http://en.wikipedia.org/wiki/Special:Search/" + encodeURIComponent( birdBrain[key].name ) + "\" target=\"_blank\">Wikipedia</a>";
 		
-			if( bandCode[key].name.search(new RegExp(value, "i")) == -1 )
+			if( birdBrain[key].name.search(new RegExp(value, "i")) == -1 )
 				continue;
 			
-			if( bandCode[key].name.search(new RegExp("unidentified", "i")) != -1 || bandCode[key].name.search(new RegExp("unknown", "i")) != -1 || bandCode[key].name.search(new RegExp("hybrid", "i")) != -1 )	
+			if( birdBrain[key].name.search(new RegExp("unidentified", "i")) != -1 || birdBrain[key].name.search(new RegExp("unknown", "i")) != -1 || birdBrain[key].name.search(new RegExp("hybrid", "i")) != -1 )	
 				wikipediaLink = "";
 	
-			resultString += "<tr><td>" + bandCode[key].name + "</td><td><strong>" + key + "</strong></td><td>" + wikipediaLink + "</td></tr>";
+			resultString += "<tr><td>" + birdBrain[key].name + "</td><td><strong>" + key + "</strong></td><td>" + wikipediaLink + "</td></tr>";
 			
 			resultCount++;		
 		
@@ -55,7 +49,7 @@ window.onload = function() {
 			document.activeElement.blur();
 		
 			resultText.innerHTML =  "No banding codes matched <strong>" + value + "</strong>.<br /> There are " + resultCount + " matching species: <br /><br />"+
-									"<table><tr><th>Species Name</th><th>Banding Code</th><th>Read More</th></tr>"+
+									"<table><tr><th>Species Name</th><th>Code</th><th>Link</th></tr>"+
 									resultString +
 									"</table>";
 
@@ -84,6 +78,8 @@ window.onload = function() {
 	submitButton.addEventListener( 'click', window.lookup );
 	inputText.addEventListener( 'keydown', window.changeSubmitButtonText );
 	inputText.addEventListener( 'click', window.clearText );
+	
+	submitButton.value = "Show All";
 	
 };
 
